@@ -1,8 +1,9 @@
 $breakpoints: (
     "thin": 320px,
-    "medium": 720px,
-    "large": 1024px,
-    "huge": 1200px
+    "small": 720px,
+    "medium": 1024px,
+    "large": 1200px,
+    "huge": 1440px
 );
 
 @mixin break-at($size) {

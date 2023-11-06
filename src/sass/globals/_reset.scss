@@ -1,24 +1,25 @@
+// global behavior
+
 html {
     box-sizing: border-box;
-    min-height: 100vh;
-    overflow: auto;
-} 
-*, *::before, *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
 }
 
-body {
+* {
+    margin: 0;
     padding: 0;
-    margin: 0;
-    font-size: 100%;
-    min-height: 100vh;
-} 
+    font-family: inherit;
+    color: inherit;
+    &::before, &::after {
+        box-sizing: inherit;
+    }
+}
 
-h1, h2, h3, p {
-    margin: 0;
-} 
+// specific element styles
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 li {
     list-style: none;
@@ -28,7 +29,6 @@ li {
     }
 }
 
-a {
-    color: black;
-    text-decoration: underline;
+img, video {
+    max-width: 100%;
 }
