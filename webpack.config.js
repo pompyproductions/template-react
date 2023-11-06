@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/react/index.jsx",
+    main: path.resolve(__dirname, "./src/index.js"),
   },
   output: {
     filename: "[name].js",
@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -38,7 +38,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve(__dirname, "./src/react/template.html"),
+      template: path.resolve(__dirname, "./src/template.html"),
     }),
   ],
   devtool: "source-map",
