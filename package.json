@@ -4,8 +4,8 @@
   "description": "React template for new projects.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot",
-    "build": "webpack-cli --mode production"
+    "start": "webpack serve --open --hot",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "Eren Gazioglu",

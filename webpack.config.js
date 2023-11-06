@@ -2,36 +2,50 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./src/react/index.jsx",
-    output: {
-        path: path.join(__dirname, "/dist"),
-        filename: "main.js"
-    },
-    module: {
-        rules: [
-            {
-                test: /\.jsx$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
-            },
-            {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"],
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            }
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/react/template.html",
-        }),
+  mode: "development",
+  entry: {
+    main: "./src/react/index.jsx",
+  },
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "./dist"),
+    clean: true,
+    assetModuleFilename: "[name][ext]",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
     ],
-    devServer: {
-        historyApiFallback: true,
-    }
-}
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: path.resolve(__dirname, "./src/react/template.html"),
+    }),
+  ],
+  devtool: "source-map",
+  devServer: {
+    static: path.resolve(__dirname, "dist"),
+    historyApiFallback: true,
+    open: true,
+    hot: true
+  },
+};
