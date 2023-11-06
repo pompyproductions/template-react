@@ -39,6 +39,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.resolve(__dirname, "./src/template.html"),
+      favicon: path.resolve(__dirname, "./src/assets/favicon-16x16.png")
     }),
   ],
   devtool: "source-map",
