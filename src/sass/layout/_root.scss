@@ -3,6 +3,10 @@
   color: var(--white);
   font-family: "Rubik", sans-serif;
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content 1px 1fr;
   height: var(--doc-height);
+}
+
+header, main {
+  padding: var(--page-margin-y) var(--page-margin-x);
 }
