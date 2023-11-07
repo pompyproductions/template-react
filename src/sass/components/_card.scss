@@ -1,0 +1,14 @@
+@use "../globals/breakpoints" as *;
+
+.card {
+  border-radius: var(--page-margin-x);
+  border: 1px solid var(--white);
+  padding: var(--page-margin-y) var(--page-margin-x);
+  display: grid;
+  grid-auto-rows: min-content;
+
+  @include break-at("small") {
+    border-radius: 1rem;
+    gap: 1rem;
+  }
+}

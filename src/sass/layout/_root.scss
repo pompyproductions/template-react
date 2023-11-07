@@ -10,3 +10,9 @@
 header, main {
   padding: var(--page-margin-y) var(--page-margin-x);
 }
+
+main {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: var(--page-margin-y);
+}
